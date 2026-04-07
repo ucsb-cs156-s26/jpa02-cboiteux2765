@@ -2,6 +2,7 @@ package edu.ucsb.cs156.spring.hello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * Every Spring Boot application has a main class with a main method 
@@ -13,9 +14,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application {
     /**
+     * Starts the Spring Boot application and returns the application context.
+     *
+     * @param args command line arguments
+     * @return the running application context
+     */
+    static ConfigurableApplicationContext run(String[] args) {
+        return SpringApplication.run(Application.class, args);
+    }
+
+    /**
      * main class for Spring Boot application.
      */
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        run(args);
     }
 }
